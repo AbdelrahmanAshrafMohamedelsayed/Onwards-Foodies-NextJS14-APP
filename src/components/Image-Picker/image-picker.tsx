@@ -58,7 +58,7 @@ export default function ImagePicker({ label, name }: ImagePickerProps) {
           type="file"
           id={name}
           accept="image/png, image/jpeg"
-          name={name}
+          name={name} // name of the input field help with the form submission
           ref={imageInput}
           onChange={handleImageChange}
         />

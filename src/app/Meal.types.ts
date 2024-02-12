@@ -3,7 +3,7 @@ export type Meal = {
   title: string;
   summary: string;
   creator: string;
-  image: string;
+  image: string | ArrayBuffer | File;
   slug: string;
   instructions: string;
   creator_email: string;
