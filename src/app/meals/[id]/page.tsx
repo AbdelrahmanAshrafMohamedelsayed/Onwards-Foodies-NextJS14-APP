@@ -11,7 +11,7 @@ type MealPageProps = {
 export async function generateMetadata({ params }: MealPageProps) {
   // we use <a> </a> to send email to the creator
   const meal = getMeal(params.id);
-
+  console.log(meal);
   if (!meal) {
     notFound();
   }
