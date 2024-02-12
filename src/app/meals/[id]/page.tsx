@@ -45,12 +45,12 @@ const MealPage = ({ params }: MealPageProps) => {
         </div>
       </header>
       <main>
-        <p
+        {/* <p
           className={classes.instructions}
           dangerouslySetInnerHTML={{
             __html: meal.instructions,
           }}
-        ></p>
+        ></p> */}
       </main>
     </>
   );
