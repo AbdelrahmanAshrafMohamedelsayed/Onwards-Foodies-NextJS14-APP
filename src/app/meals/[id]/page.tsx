@@ -8,26 +8,26 @@ type MealPageProps = {
     id: string;
   };
 };
-export async function generateMetadata({ params }: MealPageProps) {
-  // we use <a> </a> to send email to the creator
-  const meal = getMeal(params.id);
+// export async function generateMetadata({ params }: MealPageProps) {
+//   // we use <a> </a> to send email to the creator
+//   const meal = getMeal(params.id);
 
-  if (!meal) {
-    notFound();
-  }
+//   if (!meal) {
+//     notFound();
+//   }
 
-  return {
-    title: meal.title,
-    description: meal.summary,
-  };
-}
+//   return {
+//     title: meal.title,
+//     description: meal.summary,
+//   };
+// }
 
 const MealPage = ({ params }: MealPageProps) => {
   // dangerouslySetInnerHTML is used to render the html tags
   // <a> tag is used to send email to the creator
   // notFound() is used to redirect to 404 page
-  const { id } = params;
-  const meal = getMeal(id);
+  // const { id } = params;
+  // const meal = getMeal(id);
   /**
    * look at the code below this is helpful in this case
    * 1. the user looks for a meal that does not exist /meals/invalid-id
@@ -37,15 +37,15 @@ const MealPage = ({ params }: MealPageProps) => {
    * the solution is the below
    * redirect you to the nearst (not found page )
    */
-  if (!meal) {
-    notFound();
-  }
+  // if (!meal) {
+  //   notFound();
+  // }
 
-  meal.instructions = meal.instructions.replace(/\n/g, "<br />"); // replace new line with br tag
+  // meal.instructions = meal.instructions.replace(/\n/g, "<br />"); // replace new line with br tag
   // this is neccessary to render the html tags as it will ignore break lines and the text will be shown in one line
   return (
     <>
-      <header className={classes.header}>
+      {/* <header className={classes.header}>
         <div className={classes.image}>
           <Image src={`${meal.image}`} alt={meal.title} fill />
         </div>
@@ -64,7 +64,8 @@ const MealPage = ({ params }: MealPageProps) => {
             __html: meal.instructions,
           }}
         ></p>
-      </main>
+      </main> */}
+      <h1>gfghg</h1>
     </>
   );
 };
