@@ -1,9 +1,20 @@
+"use client";
+// useFormState need client
 import ImagePicker from "@/components/Image-Picker/image-picker";
 import classes from "./page.module.css";
 import ShareForm from "@/components/ShareForm/ShareForm";
 import { shareMealHandler } from "@/lib/actions";
 import MealsFormSubmit from "@/components/ShareForm/ShareForm";
+import { useFormState } from "react-dom";
+const initialState = {
+  message: "",
+};
 export default function ShareMealPage() {
+  // const [state, formAction] = useFormState(MealsFormSubmit, initialState ); this give me error
+  const [state, formAction] = useFormState(shareMealHandler, initialState);
+
+  // useFormState is like useState 1st arg is the server action
+  // 2nd arg is the initState you want to use
   // async function shareMealHandler(formData: FormData) {
   //   "use server";
   //   // handle the form submission on the server
@@ -30,7 +41,7 @@ export default function ShareMealPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className={classes.main}>
-        <form className={classes.form} action={shareMealHandler}>
+        <form className={classes.form} action={formAction}>
           <div className={classes.row}>
             <p>
               <label htmlFor="name">Your name</label>
@@ -59,6 +70,7 @@ export default function ShareMealPage() {
             ></textarea>
           </p>
           <ImagePicker label="Image" name="image" />
+          {state.message && <p>{state.message}</p>}
           <p className={classes.actions}>
             <MealsFormSubmit />
           </p>
