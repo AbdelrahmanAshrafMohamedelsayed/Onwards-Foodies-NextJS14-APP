@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import logoImg from "@/assets/logo.png";
 import Image from "next/image";
-import classes from "./Main-Header.module.css";
+import classes from "./MainHeader.module.css";
 // import { usePathname } from "next/navigation";
 import NavLink from "./NavLink";
 export default function MainHeader() {
