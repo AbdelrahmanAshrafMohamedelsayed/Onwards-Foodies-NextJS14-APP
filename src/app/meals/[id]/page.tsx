@@ -8,19 +8,19 @@ type MealPageProps = {
     id: string;
   };
 };
-// export async function generateMetadata({ params }: MealPageProps) {
-//   // we use <a> </a> to send email to the creator
-//   const meal = getMeal(params.id);
+export async function generateMetadata({ params }: MealPageProps) {
+  // we use <a> </a> to send email to the creator
+  const meal = getMeal(params.id);
 
-//   if (!meal) {
-//     notFound();
-//   }
+  if (!meal) {
+    notFound();
+  }
 
-//   return {
-//     title: meal.title,
-//     description: meal.summary,
-//   };
-// }
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
 
 const MealPage = ({ params }: MealPageProps) => {
   // dangerouslySetInnerHTML is used to render the html tags
