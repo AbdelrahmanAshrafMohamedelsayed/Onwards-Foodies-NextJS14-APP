@@ -16,7 +16,8 @@ export async function getMeals(): Promise<Meal[]> {
   return db.prepare("SELECT * FROM meals").all() as Meal[];
 }
 
-export function getMeal(slug: string): Meal {
+export async function getMeal(slug: string): Promise<Meal> {
+  await new Promise((resolve) => setTimeout(resolve, 1000)); // simulate slow network to show loading state
   return db.prepare("SELECT * FROM meals WHERE slug = ?").get(slug) as Meal;
   // here ? is replaced by the get(?)
 }

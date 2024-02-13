@@ -10,7 +10,7 @@ type MealPageProps = {
 };
 export async function generateMetadata({ params }: MealPageProps) {
   // we use <a> </a> to send email to the creator
-  const meal = getMeal(params.id);
+  const meal = await getMeal(params.id);
 
   if (!meal) {
     notFound();
@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: MealPageProps) {
   };
 }
 
-const MealPage = ({ params }: MealPageProps) => {
+const MealPage = async ({ params }: MealPageProps) => {
   // dangerouslySetInnerHTML is used to render the html tags
   // <a> tag is used to send email to the creator
   // notFound() is used to redirect to 404 page
   const { id } = params;
-  const meal = getMeal(id);
+  const meal = await getMeal(id);
   /**
    * look at the code below this is helpful in this case
    * 1. the user looks for a meal that does not exist /meals/invalid-id
