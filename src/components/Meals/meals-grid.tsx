@@ -6,11 +6,12 @@ type MealsGridProps = {
   meals: Meal[];
 };
 export default function MealsGrid({ meals }: MealsGridProps) {
+  // console.log(meals[0]._id);
   return (
     <ul className={classes.meals}>
       {meals.map((meal) => (
-        <li key={meal.id}>
-          <MealItem {...meal} />
+        <li key={meal.slug}>
+          <MealItem meal={meal} />
         </li>
       ))}
     </ul>
