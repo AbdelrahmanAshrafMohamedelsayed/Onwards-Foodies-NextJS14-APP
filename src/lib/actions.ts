@@ -59,7 +59,7 @@ export async function shareMealHandler(
 }
 // delete a meal from the database
 export async function deleteMealHandler(slug: string, formData: FormData) {
-  deleteMeal(slug);
+  await deleteMeal(slug);
   revalidatePath("/meals"); // help to revalidate the cache that belong to the page /meals
   // only this segment not children for example /meals ok and /meals/1 not
   // if you want all nested pages then use

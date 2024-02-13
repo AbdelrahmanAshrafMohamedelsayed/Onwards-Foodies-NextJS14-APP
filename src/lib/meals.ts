@@ -85,10 +85,11 @@ export async function saveMeal(meal: Meal2) {
   }
 }
 // delete meal from the database
-export function deleteMeal(slug: string) {
+export async function deleteMeal(slug: string) {
+  console.log(slug);
   try {
     connectToDB();
-    Meal.deleteOne({ slug: slug });
+    await Meal.deleteOne({ slug: slug });
   } catch (error) {
     console.error(error);
     throw error;
