@@ -34,6 +34,7 @@ export async function shareMealHandler(
     summary: formData.get("summary") as string, // "summary" => the name of the input field
     instructions: formData.get("instructions") as string, // "instructions" => the name of the input field
     // image: formData.get("image") as string | File, // "image" => the name of the input field
+    image: null,
   };
   if (
     isInvalidText(meal.title) ||
@@ -42,7 +43,7 @@ export async function shareMealHandler(
     isInvalidText(meal.creator) ||
     isInvalidText(meal.creator_email) ||
     !meal.creator_email.includes("@") // Use includes method only if creator_email is a string
-) {
+  ) {
     // in server actions you can return a response
     // but the returned object should be realisable which mean not contain any funcs
     return {
