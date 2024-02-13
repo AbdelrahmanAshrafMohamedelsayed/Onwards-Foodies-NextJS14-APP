@@ -46,9 +46,9 @@ export async function saveMeal(meal: Meal2) {
     await connectToDB();
     meal.slug = slugify(meal.title as string, { lower: true });
     meal.instructions = xss(meal.instructions as string);
-    // const extension = meal.image.name.split(".").pop(); // get the extension of the file
-    // const randomString = Math.random().toString(36).substring(2, 15); // create a random string
-    // const fileName = `${meal.slug}-${randomString}.${extension}`; // create a new file name
+    const extension = meal.image.name.split(".").pop(); // get the extension of the file
+    const randomString = Math.random().toString(36).substring(2, 15); // create a random string
+    const fileName = `${meal.slug}-${randomString}.${extension}`; // create a new file name
     // // then we will save the file with the new name in the public folder
 
     // // start of the image upload
