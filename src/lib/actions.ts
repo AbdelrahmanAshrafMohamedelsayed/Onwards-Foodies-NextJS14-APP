@@ -24,7 +24,7 @@ export async function shareMealHandler(
     creator_email: string;
     summary: string;
     instructions: string;
-    image: string | File;
+    image: string | File | ArrayBuffer | null | any;
   }
   const meal: Meal = {
     title: formData.get("title") as string, // "title" => the name of the input field
@@ -33,7 +33,7 @@ export async function shareMealHandler(
     creator_email: formData.get("email") as string, // "email" => the name of the input field
     summary: formData.get("summary") as string, // "summary" => the name of the input field
     instructions: formData.get("instructions") as string, // "instructions" => the name of the input field
-    image: formData.get("image") as string | File, // "image" => the name of the input field
+    // image: formData.get("image") as string | File, // "image" => the name of the input field
   };
   if (
     isInvalidText(meal.title) ||
@@ -41,9 +41,8 @@ export async function shareMealHandler(
     isInvalidText(meal.instructions) ||
     isInvalidText(meal.creator) ||
     isInvalidText(meal.creator_email) ||
-    !meal.creator_email.includes("@") || // Use includes method only if creator_email is a string
-    (meal.image instanceof File && meal.image.size === 0) // Check the size property of the image if it is a File
-  ) {
+    !meal.creator_email.includes("@") // Use includes method only if creator_email is a string
+) {
     // in server actions you can return a response
     // but the returned object should be realisable which mean not contain any funcs
     return {
