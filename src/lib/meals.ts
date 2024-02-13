@@ -84,7 +84,13 @@ export async function saveMeal(meal: Meal2) {
     throw error;
   }
 }
-// // delete meal from the database
-// export function deleteMeal(slug: string) {
-//   db.prepare("DELETE FROM meals WHERE slug = ?").run(slug);
-// }
+// delete meal from the database
+export function deleteMeal(slug: string) {
+  try {
+    connectToDB();
+    Meal.deleteOne({ slug: slug });
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
