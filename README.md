@@ -6,6 +6,10 @@ Welcome to Foodies App, your go-to platform for buying and selling delicious hom
 
 ## **Features 🌟**
 
+## **Live Demo 🔗**
+
+#### [Foodies App Link](https://onwards-foodies-next-js-14-app.vercel.app/)
+
 ### **1. See All Meals 👀**
 
 Browse through a diverse selection of mouth-watering meals. From appetizers to desserts, Foodies App has it all! Get inspired by the culinary masterpieces crafted by our talented community members.
