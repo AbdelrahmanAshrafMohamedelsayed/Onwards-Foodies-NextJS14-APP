@@ -1,6 +1,6 @@
 # Foodies App
 
-# **Foodies App 🍔🍲 **
+# **Foodies App 🍔🍲**
 
 Welcome to Foodies App, your go-to platform for buying and selling delicious homemade meals! This [Next.js 14](https://nextjs.org/) based application is designed to connect food enthusiasts, allowing them to explore a variety of meals, sell their culinary creations, and engage with like-minded communities.
 
